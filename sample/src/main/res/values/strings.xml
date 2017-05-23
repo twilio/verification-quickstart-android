@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TwilioVerification Sample</string>
+    <string name="verify_phone_hint">Phone number</string>
+    <string name="verify_pin_hint">Verification Pin</string>
+    <string name="invalid_phone_number">Invalid phone number</string>
+    <string name="verify_state_sms_sent">Verification Pin Sent</string>
+    <string name="verify_state_sms_received">Pin received</string>
+    <string name="verify_state_success">Phone Number Successfully verified</string>
+    <string name="verify_state_error">Error while verifying phone number</string>
+    <string name="verify_title_label">TwilioVerify</string>
+    <string name="verify_welcome_label">Welcome to Twilio’s phone verification.\nEnter your phone number and we will verify your identity almost magically</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="verify_button_label">Verify</string>
+    <string name="verify_via_sms_button_label">SMS</string>
+    <string name="verify_via_call_button_label">Call</string>
+    <string name="settings_invalid_endpoint">Invalid endpoint</string>
+    <string name="progress_bar_label">Verifying automagically</string>
+
+    <!-- Strings related to Successful verification-->
+    <string name="number_verified_success_label">Number Verified!</string>
+    <string name="number_verified_text">Yay, your identity has been successfully verified</string>
+
+    <!-- Strings related to Failed verification-->
+    <string name="verify_failed_title_label">Verification Failed</string>
+    <string name="verify_failed_message_label">Verify your phone number or enter a new one, then try SMS or Phone Call verification</string>
+    <string name="verification_code_hint">4-Digit Verification Code</string>
+
+    <!-- Strings related to Settings -->
+    <string name="menu_settings_label">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="token_endpoint_label">Token Endpoint</string>
+     <string name="default_endpoint">https://your-heroku-app.herokuapp.com/verify/token</string>
+    <string name="verify_via_label">Verify via</string>
+
+</resources>

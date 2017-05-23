@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Workaround for this bug on the Layout editor http://stackoverflow.com/questions/41303347/couldnt-resolve-resource-id-visible-when-using-textinputlayout-->
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
+</resources>

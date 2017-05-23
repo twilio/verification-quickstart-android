@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/verify_via"
+        style="@style/RegularText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_horizontal"
+        android:text="@string/verify_via_label"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verify_via"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <com.twilio.verification.sample.views.ProgressBarButton
+            android:id="@+id/verify_via_sms_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            app:button_theme="@style/VerifySMSButtonTheme"
+            app:indeterminateTint="@color/blue"
+            app:text="@string/verify_via_sms_button_label" />
+
+        <com.twilio.verification.sample.views.ProgressBarButton
+            android:id="@+id/verify_via_call_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            app:button_theme="@style/VerifyCallButtonTheme"
+            app:indeterminateTint="@color/green"
+            app:text="@string/verify_via_call_button_label" />
+    </LinearLayout>
+</RelativeLayout>
