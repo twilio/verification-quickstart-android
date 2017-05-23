@@ -17,9 +17,6 @@ allprojects {
         maven {
             url PARTNER_SDK_DIR
         }
-        maven {
-            url "http://twilio.bintray.com/releases"
-        }
         jcenter()
     }
 }
