@@ -7,7 +7,7 @@
     <string name="verify_state_sms_received">Pin received</string>
     <string name="verify_state_success">Phone Number Successfully verified</string>
     <string name="verify_state_error">Error while verifying phone number</string>
-    <string name="verify_title_label">TwilioVerify</string>
+    <string name="verify_title_label">Twilio Verification SDK</string>
     <string name="verify_welcome_label">Welcome to Twilio’s phone verification.\nEnter your phone number and we will verify your identity almost magically</string>
     <string name="phone_number_hint">Phone Number</string>
     <string name="verify_button_label">Verify</string>
