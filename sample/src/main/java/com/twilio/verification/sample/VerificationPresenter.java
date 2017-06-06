@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.auth0.android.jwt.JWT;
 import com.twilio.verification.TwilioVerification;
 import com.twilio.verification.external.VerificationStatus;
 import com.twilio.verification.external.Via;
@@ -33,7 +32,6 @@ public class VerificationPresenter {
     private TwilioVerification twilioVerification;
     private TokenServerApi tokenServerApi;
     private Via via;
-    private JWT jwtToken;
 
     public VerificationPresenter(Context context) {
         twilioVerification = new TwilioVerification(context);
@@ -95,13 +93,7 @@ public class VerificationPresenter {
         this.via = via;
         view.updateView(VerificationUIModel.inProgress(via));
 
-        if (jwtToken == null || jwtToken.isExpired(0)) {
-            getTokenAndStartVerification(phoneNumber, via);
-        } else {
-            twilioVerification.startVerification(
-                    jwtToken.toString(),
-                    via);
-        }
+        getTokenAndStartVerification(phoneNumber, via);
     }
 
     private void getTokenAndStartVerification(final String phoneNumber, final Via via) {
@@ -109,9 +101,8 @@ public class VerificationPresenter {
             @Override
             public void onResponse(Call<TokenServerResponse> call, Response<TokenServerResponse> tokenServerResponse) {
                 if (tokenServerResponse != null && tokenServerResponse.body() != null) {
-                    jwtToken = new JWT(tokenServerResponse.body().getJwtToken());
                     twilioVerification.startVerification(
-                            jwtToken.toString(),
+                            tokenServerResponse.body().getJwtToken(),
                             via);
                     return;
                 }
