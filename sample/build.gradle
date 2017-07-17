@@ -34,11 +34,11 @@ dependencies {
         exclude module: 'recyclerview-v7'
 
     })
-    compile 'com.twilio:verification:1.0.1'
+    compile 'com.twilio:verification:1.0.4'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.google.android.gms:play-services-auth:10.2.5'
+    compile 'com.google.android.gms:play-services-auth:11.0.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
     testCompile 'junit:junit:4.12'
 }

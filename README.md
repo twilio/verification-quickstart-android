@@ -18,23 +18,9 @@ Then you can point your app to that server by providing the url in strings.xml
 <string name="default_endpoint">https://{YOUR_SERVER}.herokuapp.com/verify/token</string>
 ```
 
-### Google Play Services
-Temporarily and until Google releases its library, you will need to set a local Google Play Services SDK. 
-[Contact us](https://ahoy.twilio.com/verificationsdk) to recieve it.
+### Read verification codes without requesting sms read permissions
+  
+ To setup automatic input of verification codes in your app please refer to [this guide](https://www.twilio.com/docs/guides/twilio-verification-sdk-integration-guide/register-your-app-twilio-verification-api)
 
-Once obtained you will need to specify the path to that library by editing your ~/.gradle/gradle.properties file
-```
-PARTNER_SDK_DIR=/Users/{USER_NAME}/workspace/partner-sdk
-```
 
-We already linked that variable in the build.gradle file, and set it as a local maven repository.
-```
-allprojects {
-    repositories {
-        maven {
-            url PARTNER_SDK_DIR
-        }
-        jcenter()
-    }
-}
-```
+For further information please [contact us](https://ahoy.twilio.com/verificationsdk)
