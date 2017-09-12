@@ -1,5 +1,6 @@
 prepare = 3
 unitTests = 8
+archivingArtifacts = 3
 
 future_release = 'future_release'
 master = 'master'
@@ -33,6 +34,10 @@ node('appium_ventspils_node') {
           } finally {
             publishUnitTests()
           }
+      }
+      stage 'Artifacts'
+        timeout(archivingArtifacts) {
+          archiveArtifacts artifacts: '**/*.apk'
       }
     }
   } catch (e) {
