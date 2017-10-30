@@ -1,12 +1,13 @@
 prepare = 3
 unitTests = 8
+archivingArtifacts = 3
 
 future_release = 'future_release'
 master = 'master'
 
 body = """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'. Check console output at "${env.BUILD_URL}"""
 subject = "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-emailList = 'team-authy-apps@twilio.com'
+emailList = env.APP_TEAM_EMAIL
 
 properties([
   buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')),
@@ -33,6 +34,10 @@ node('appium_ventspils_node') {
           } finally {
             publishUnitTests()
           }
+      }
+      stage 'Artifacts'
+        timeout(archivingArtifacts) {
+          archiveArtifacts artifacts: '**/*.apk'
       }
     }
   } catch (e) {
