@@ -40,9 +40,6 @@ node('appium_ventspils_node') {
           archiveArtifacts artifacts: '**/*.apk'
       }
     }
-    else {
-        currentBuild.result = "NOT_BUILT"
-    }
   } catch (e) {
     notifyFailed()
     currentBuild.result = "FAILED"
