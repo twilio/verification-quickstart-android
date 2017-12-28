@@ -105,4 +105,12 @@ public class ProgressBarButton extends FrameLayout {
     public void setText(String text) {
         button.setText(text);
     }
+
+    public Button getButton() {
+        return button;
+    }
+
+    public ProgressBar getProgressBar() {
+        return progressBar;
+    }
 }

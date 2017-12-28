@@ -23,22 +23,29 @@ android {
             storeFile file('debug.keystore')
         }
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.android.support', module: 'appcompat'
         exclude group: 'com.android.support', module: 'support-v4'
         exclude module: 'recyclerview-v7'
 
     })
-    compile 'com.twilio:verification:1.0.5'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.google.android.gms:play-services-auth:11.0.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.twilio:verification:1.0.5'
+    implementation 'com.android.support:appcompat-v7:25.3.1'
+    implementation 'com.android.support:design:25.3.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.android.gms:play-services-auth:11.0.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:3.6.1"
 }
