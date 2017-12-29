@@ -69,7 +69,7 @@ publishHTML target: [
     allowMissing: false,
     alwaysLinkToLastBuild: true,
     keepAll: true,
-    reportDir: 'sample/build/reports/tests/testDebugUnitTests',
+    reportDir: 'sample/build/reports/tests/testDebugUnitTest',
     reportFiles: 'index.html',
     reportName: 'Debug Unit Tests'
   ]
