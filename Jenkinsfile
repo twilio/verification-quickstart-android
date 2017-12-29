@@ -27,7 +27,7 @@ node('appium_ventspils_node') {
       stage 'Run Unit Tests'
         timeout(unitTests) {
           try{
-            sh "./gradlew :sample:connectedDebugAndroidTest"
+            sh "./gradlew :sample:connectedDebugAndroidTest :sample:testDebugUnitTest"
           } catch (e) {
             throw e
           } finally {
@@ -57,11 +57,20 @@ def notifyFailed(emailList) {
 
 def publishUnitTests() {
   publishHTML target: [
-    allowMissing: true,
+    allowMissing: false,
     alwaysLinkToLastBuild: true,
     keepAll: true,
     reportDir: 'sample/build/reports/androidTests/connected',
     reportFiles: 'index.html',
     reportName: 'Android Unit Tests'
+  ]
+
+publishHTML target: [
+    allowMissing: false,
+    alwaysLinkToLastBuild: true,
+    keepAll: true,
+    reportDir: 'sample/build/reports/tests/testDebugUnitTests',
+    reportFiles: 'index.html',
+    reportName: 'Debug Unit Tests'
   ]
 }
